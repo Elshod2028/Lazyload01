@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>Doom (2016 video game)</p>
+	<img src="./img/blur/output-onlineimagetools (1).jpg" data-src='./img/Doom_Cover.jpg'class="blur">
+	<p>Doom is a first-person shooter video game developed by id Software and published by Bethesda Softworks. It was released worldwide on Windows, PlayStation 4, and Xbox One in May 2016 and is powered by id Tech 6. A port for Nintendo Switch was co-developed with Panic Button and released in November 2017.[1] A reboot of the Doom franchise, it is the fourth title in the main series and the first major installment since Doom 3 in 2004.</p>
+
+<p>Doom was announced as "Doom 4" in 2008, and that version underwent an extensive development cycle with different builds and designs before the game was restarted in 2011 and revealed as simply "Doom" in 2014. It was tested by customers who pre-ordered the 2014 Bethesda game Wolfenstein: The New Order and also by the general public. Mick Gordon composed the music for the game, with additional music contributed by Ben F. Carney, Chris Hite, and Chad Mossholder.</p>
+
+<p>Players take the role of an unnamed space marine as he battles demonic forces from Hell that have been unleashed by the Union Aerospace Corporation on a future-set colonized planet Mars. The gameplay returns to a faster pace with more open-ended levels, closer to the first two games than the slower survival horror approach of Doom 3. It also features environment traversal, character upgrades, and the ability to perform executions known as "glory kills". The game also supports an online multiplayer component and a level editor known as "SnapMap", co-developed with Certain Affinity[b] and Escalation Studios, respectively.</p>
+<p>Players take the role of an unnamed space marine as he battles demonic forces from Hell that have been unleashed by the Union Aerospace Corporation on a future-set colonized planet Mars. The gameplay returns to a faster pace with more open-ended levels, closer to the first two games than the slower survival horror approach of Doom 3. It also features environment traversal, character upgrades, and the ability to perform executions known as "glory kills". The game also supports an online multiplayer component and a level editor known as "SnapMap", co-developed with Certain Affinity[b] and Escalation Studios, respectively.</p>
+<p>Players take the role of an unnamed space marine as he battles demonic forces from Hell that have been unleashed by the Union Aerospace Corporation on a future-set colonized planet Mars. The gameplay returns to a faster pace with more open-ended levels, closer to the first two games than the slower survival horror approach of Doom 3. It also features environment traversal, character upgrades, and the ability to perform executions known as "glory kills". The game also supports an online multiplayer component and a level editor known as "SnapMap", co-developed with Certain Affinity[b] and Escalation Studios, respectively.</p>
+<script type="text/javascript">
+	let lazyArray = Array.from(document.querySelectorAll('.blur'));
+	let ScrollCounter = 0
+    document.addEventListener("DOMContentLoaded", function() {
+	document.addEventListener('scroll', lazyLoad, false);
+});
+	
+	function lazyLoad() {
+		for (let lazy of lazyArray) {
+			if (lazy.hasAttribute('data-src') &&
+				lazy.getBoundingClientRect().top <= window.innerHeight) {
+				let data = lazy.getAttribute('data-src');
+				lazy.setAttribute('src', data);
+				if(lazy == lazyArray[0]) {
+					lazyArray.shift()
+				}
+			};
+		};
+	};
+	if (lazyArray.length == 0) {
+		document.removeEventListener('scroll', lazyLoad);
+	};
+</script>
+</body>
+</html>
